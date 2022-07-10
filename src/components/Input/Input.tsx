@@ -1,5 +1,7 @@
 import React from 'react';
 
+import hocWrapper from '../../hoc/hoc';
+
 import { newStateType } from './type';
 
 import './style.css';
@@ -34,4 +36,4 @@ const Input = (props: newStateType): JSX.Element => {
     </label>
   );
 };
-export default Input;
+export default hocWrapper(Input);
