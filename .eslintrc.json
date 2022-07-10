@@ -28,8 +28,14 @@
     ],
 
     "rules": {
+        "indent": "warn",
         "arrow-body-style": ["error", "always"],
-        "no-use-before-define": "off",
+        "no-use-before-define": ["error", {
+            "functions": true,
+            "classes": true,
+            "variables": true,
+            "allowNamedExports": false
+        }],
         "@typescript-eslint/no-use-before-define": ["error"],
         "react/jsx-filename-extension": [ "warn", {"extensions": [".tsx"]} ],
         "react/jsx-one-expression-per-line": [0, { "allow": "single-child" }],
