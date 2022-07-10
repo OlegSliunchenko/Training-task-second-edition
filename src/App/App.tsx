@@ -1,51 +1,31 @@
-import React, { useReducer } from 'react';
+import React from 'react';
 
-import { CheckBox, Container, Input } from '@components';
-
-import { dispatchType, stateType } from './type';
+import { Container } from '@components';
+import ArrayTransformer from '@utils/ArrayTransformer';
 
 import './App.css';
 
-const initState = {
-  type: '',
-  placeholder: '',
-};
-const reducer = (state: stateType, action: dispatchType): stateType => {
-  switch (action.type) {
-    case 'Inline input':
-      return {
-        ...state,
-        type: 'text',
-        placeholder: 'Inline input',
-      };
-    case 'Input Area':
-      return {
-        ...state,
-        type: 'TextArea',
-        placeholder: 'TextArea',
-      };
-    default:
-      return state;
-  }
-};
-
 const App = (): JSX.Element => {
-  const [newState, dispatch] = useReducer(reducer, initState);
-  const checkBoxHandler = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    switch (e.target.id) {
-      case '1':
-        return dispatch({ type: 'Inline input' });
-      case '2':
-        return dispatch({ type: 'Input Area' });
-      default:
-    }
-    return undefined;
-  };
+  const data = [
+    {
+      id: '2',
+      firstName: 'Oleg',
+      middleName: 'OLLLLLL',
+      lastName: 'SLUNCH',
+      address: {
+        country: 'UKRAINE',
+        city: 'DROHOB',
+        district: '',
+        street: 'Gran',
+        house: 79,
+      },
+    },
+  ];
+  ArrayTransformer(data);
 
   return (
     <Container className="App">
-      <CheckBox checkBoxHandler={checkBoxHandler} />
-      <Input newState={newState} />
+      <h1>See Console for ArrayTransformer Result</h1>
     </Container>
   );
 };
