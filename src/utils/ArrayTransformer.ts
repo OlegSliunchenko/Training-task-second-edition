@@ -9,15 +9,10 @@ const ArrayTransformer = (data: ObjectType[]): void => {
       house,
       country
     } = obj.address;
-    return (
-      district.length ? {
-        fullName: `${obj.firstName} ${obj.middleName} ${obj.lastName}`,
-        address: `${city} ${district} ${street} ${house} ${country}`,
-      } : {
-        fullName: `${obj.firstName} ${obj.middleName} ${obj.lastName}`,
-        address: `${city} NA ${street} ${house} ${country}`,
-      }
-    );
+    return {
+      fullName: `${obj.firstName} ${obj.middleName} ${obj.lastName}`,
+      address: `${city} ${district || 'NA'} ${street} ${house} ${country}`,
+    };
   });
   // eslint-disable-next-line no-console
   return console.log(rez);
