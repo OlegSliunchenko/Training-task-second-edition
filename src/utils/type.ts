@@ -6,7 +6,7 @@ export interface ObjectType {
   address: {
     country: string;
     city: string;
-    district: string;
+    district?: string;
     street: string;
     house: number;
   };

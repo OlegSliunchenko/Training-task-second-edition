@@ -11,7 +11,7 @@ const ArrayTransformer = (data: ObjectType[]): void => {
     } = obj.address;
     return {
       fullName: `${obj.firstName} ${obj.middleName} ${obj.lastName}`,
-      address: `${city} ${district || 'NA'} ${street} ${house} ${country}`,
+      address: `${city} ${district ?? 'NA'} ${street} ${house} ${country}`,
     };
   });
   // eslint-disable-next-line no-console

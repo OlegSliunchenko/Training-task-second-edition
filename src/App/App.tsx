@@ -15,7 +15,6 @@ const App = (): JSX.Element => {
       address: {
         country: 'UKRAINE',
         city: 'DROHOB',
-        district: 'ZEBRA',
         street: 'Gran',
         house: 79,
       },
