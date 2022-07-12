@@ -1,22 +1,26 @@
 import { IDataType } from '@utils/type';
 
-const SortingFunction = (data: IDataType[], key: string[]): void => {
+const SortingFunction = (data: IDataType[], key?: string[]): void | IDataType[] => {
+  const NewData = JSON.parse(JSON.stringify(data));
+  if (key === undefined) {
+    return data;
+  }
   for (let h = 0; h < key.length; h += 1) {
-    for (let i = 0; i < data.length; i += 1) {
-      for (let j = 0; j < data.length - i - 1; j += 1) {
+    for (let i = 0; i < NewData.length; i += 1) {
+      for (let j = 0; j < NewData.length - i - 1; j += 1) {
         if (
-          data[j][key[h] as keyof IDataType]
-          > data[j + 1][key[h] as keyof IDataType]
+          NewData[j][key[h] as keyof IDataType]
+          > NewData[j + 1][key[h] as keyof IDataType]
         ) {
-          const temp = data[j];
+          const temp = NewData[j];
           // eslint-disable-next-line no-param-reassign
-          data[j] = data[j + 1];
+          NewData[j] = NewData[j + 1];
           // eslint-disable-next-line no-param-reassign
-          data[j + 1] = temp;
+          NewData[j + 1] = temp;
         }
       }
     }
   }
-  console.log(data);
+ return console.log(NewData);
 };
 export default SortingFunction;

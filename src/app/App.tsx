@@ -27,7 +27,7 @@ const ARR = [
 ];
 const key = ['user', 'age', 'f'];
 const App = (): any => {
-  SortingFunction(ARR, key);
+  SortingFunction(ARR);
 
   return (
     <Container className="App">
