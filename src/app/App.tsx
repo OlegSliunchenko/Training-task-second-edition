@@ -9,6 +9,7 @@ const ARR = [
   {
     user: 'fred',
     age: 48,
+    f: 3
   },
   {
     user: 'barney',
@@ -17,15 +18,16 @@ const ARR = [
   {
     user: 'fred',
     age: 40,
+    f: 2
   },
   {
     user: 'barney',
     age: 34,
   },
 ];
-const action = { type: 'user age' };
+const key = ['user', 'age', 'f'];
 const App = (): any => {
-  SortingFunction(ARR, action);
+  SortingFunction(ARR, key);
 
   return (
     <Container className="App">
