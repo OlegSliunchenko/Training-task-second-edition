@@ -7,27 +7,29 @@ import './App.css';
 
 const ARR = [
   {
-    user: 'fred',
+    user: 'zedd',
     age: 48,
-    f: 3
+    f: 3,
   },
   {
     user: 'barney',
-    age: 36,
+    age: 54,
+    f: 4
   },
   {
     user: 'fred',
     age: 40,
-    f: 2
+    f: 2,
   },
   {
     user: 'barney',
-    age: 34,
+    age: 54,
+    f: 1
   },
 ];
 const key = ['user', 'age', 'f'];
 const App = (): any => {
-  SortingFunction(ARR);
+  SortingFunction(ARR, key);
 
   return (
     <Container className="App">

@@ -1,8 +1,5 @@
 export interface IDataType {
-  user: string;
+  user?: string;
   age: number;
-}
-
-export interface IActionType {
-  type: string;
+  f?: number
 }
